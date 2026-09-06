@@ -25,12 +25,10 @@ app.get("/api/internships", async (req, res) => {
   try {
 
     // Search value
-    const search =
-      req.query.search?.trim() || "internship";
+    const search = req.query.search?.trim() || "internship";
 
     // Location value
-    const location =
-      req.query.location?.trim() || "";
+    const location =req.query.location?.trim() || "";
 
 
     // ==============================

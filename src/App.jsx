@@ -53,6 +53,8 @@ function App() {
 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
+  const [locationTerm, setLocationTerm] = useState("Chennai");
   const [selectedJob, setSelectedJob] = useState(null);
   const [savedJobs, setSavedJobs] = useState(() => {
   const saved = localStorage.getItem("internfinder_saved_jobs");
@@ -84,8 +86,8 @@ useEffect(() => {
         );
 
         const response = await fetch(
-          "https://internfinder-1.onrender.com/api/internships?${params.toString()}"
-        );
+  `https://internfinder-1.onrender.com/api/internships?${params.toString()}`
+);
 
         if (!response.ok) {
           throw new Error("API request failed");
