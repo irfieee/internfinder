@@ -48,6 +48,7 @@ function App() {
   const [jobs, setJobs] = useState([]);
   const [search, setSearch] = useState("");
   const [location, setLocation] = useState("");
+  const [activeNav, setActiveNav] = useState("home");
 
   const [submittedSearch, setSubmittedSearch] = useState("internship");
   const [submittedLocation, setSubmittedLocation] = useState("");
@@ -330,26 +331,39 @@ function App() {
 
         <div className="nav-links">
 
-          <a
-            className="active"
-            href="#home"
-          >
-            Home
-          </a>
+  <a
+    className={activeNav === "home" ? "active" : ""}
+    href="#home"
+    onClick={() => setActiveNav("home")}
+  >
+    Home
+  </a>
 
-          <a href="#internships">
-            Internships
-          </a>
+  <a
+    className={activeNav === "internships" ? "active" : ""}
+    href="#internships"
+    onClick={() => setActiveNav("internships")}
+  >
+    Internships
+  </a>
 
-          <a href="#companies">
-            Companies
-          </a>
+  <a
+    className={activeNav === "companies" ? "active" : ""}
+    href="#companies"
+    onClick={() => setActiveNav("companies")}
+  >
+    Companies
+  </a>
 
-          <a href="#about">
-            About
-          </a>
+  <a
+    className={activeNav === "about" ? "active" : ""}
+    href="#about"
+    onClick={() => setActiveNav("about")}
+  >
+    About
+  </a>
 
-        </div>
+</div>
 
         <div className="nav-actions">
 
